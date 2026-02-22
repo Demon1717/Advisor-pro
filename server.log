@@ -1,0 +1,14 @@
+
+> advisor-pro@0.0.0 server
+> tsx server/index.ts
+
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Server running at http://localhost:3001
+Request to delete lead with ID: "5"
+Current leads count: 5
+Leads count after filtering: 4
+Successfully deleted lead 5
+Request to delete lead with ID: "1"
+Current leads count: 4
+Leads count after filtering: 3
+Successfully deleted lead 1

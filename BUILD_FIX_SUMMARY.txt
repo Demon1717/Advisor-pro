@@ -1,0 +1,25 @@
+Build Fix Summary
+=================
+
+Date: 2025-12-28
+Status: Ready for Deployment
+
+Changes Applied:
+1.  **TypeScript Configuration (`tsconfig.json`):**
+    *   Excluded `src/logic/verify_*.ts`, `src/logic/repro*.ts`, and `src/logic/test_*.ts` from the build.
+    *   This resolves errors related to missing Node.js types (e.g., `process`) and type mismatches in verification scripts that are not part of the frontend application.
+
+2.  **Component Fixes:**
+    *   **`src/components/RecommendationCard.tsx`:**
+        *   Fixed type mismatch for `age`. The `FamilyMember` type allows `string` (empty input), but the logic engine requires `number`. Added explicit conversion: `parseInt(m.age) || 0`.
+        *   Removed unused `React` import.
+    *   **Unused Imports:** Removed `import React from 'react'` from the following files as the new JSX transform handles it:
+        *   `src/components/Sidebar.tsx`
+        *   `src/components/FamilyForm.tsx`
+        *   `src/components/MemberProfile.tsx`
+        *   `src/context/AppContext.tsx`
+        *   `src/App.tsx`
+    *   **`src/main.tsx`:** Switched to named import `{ StrictMode }` to avoid unused variable warning.
+
+Verification:
+The project structure is now cleaner, and the specific errors blocking the `tsc && vite build` pipeline have been addressed. The excluded logic files will still exist for local testing but won't break the production build.
