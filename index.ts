@@ -3,9 +3,9 @@ import cors from 'cors';
 import { calculatePremium } from './automation.ts';
 import path from 'path';
 import fs from 'fs';
-import calculatePremiumHandler from '../api/calculatePremium';
+import calculatePremiumHandler from '../api/calculatePremium.ts';
 import dotenv from 'dotenv';
-import { query } from './db';
+import { query } from './db.ts';
 
 dotenv.config();
 
