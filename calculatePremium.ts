@@ -1,4 +1,5 @@
-import { chromium, Browser, Page } from 'playwright';
+import { chromium } from 'playwright';
+import type { Browser, Page } from 'playwright';
 // For Vercel deployment, you would use:
 // import chromium from 'chrome-aws-lambda';
 // import { chromium as playwrightCore } from 'playwright-core';
