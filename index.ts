@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { calculatePremium } from './automation';
+import { calculatePremium } from './automation.ts';
 import path from 'path';
 import fs from 'fs';
 import calculatePremiumHandler from '../api/calculatePremium';
